@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //window?.rootViewController = navigationController
         window?.rootViewController = mainScene
         window?.makeKeyAndVisible() //Thanks to this func, w can see mainScene
-        windowScene.keyWindow?.rootViewController = mainScene
+        print(EndpointHelper.searchKey(term: "micheal jackson", entity: "song").urlRequest.url)
+        //windowScene.keyWindow?.rootViewController = mainScene
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

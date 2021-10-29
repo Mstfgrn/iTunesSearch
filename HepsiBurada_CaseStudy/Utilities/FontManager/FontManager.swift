@@ -14,7 +14,7 @@ enum FontManager: GenericValueProtocol {
     var value: UIFont {
         switch self {
         case .bold(let size):
-            return UIFont.systemFont(ofSize: size, weight: .bold)
+            return UIFont.boldSystemFont(ofSize: size)
             
         case .regular(let size):
             return UIFont.systemFont(ofSize: size, weight: .regular)

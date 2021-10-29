@@ -9,14 +9,19 @@ import Foundation
 import UIKit
 
 class ItemCollectionView: GenericBaseView<ItemCollectionViewData> {
+    let cellId = "deneme"
+
     private lazy var componentCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let temp = UICollectionView(frame: .zero, collectionViewLayout: layout)
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.delegate = self
         temp.dataSource = self
-        temp.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "deneme")
+        temp.register(SearcViewCell.self, forCellWithReuseIdentifier: cellId)
         return temp
     }()
     override func addMajorViewComponents() {
@@ -39,6 +44,7 @@ class ItemCollectionView: GenericBaseView<ItemCollectionViewData> {
         ])
     
     }
+
     
 }
 extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -47,9 +53,19 @@ extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: "deneme", for: indexPath)
-        cell.backgroundColor = .black
+        let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
+        //cell.backgroundColor = .black
+        cell.layer.cornerRadius = 12 
         return cell
         
     }
+    
 }
+extension ItemCollectionView: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (UIScreen.main.bounds.width - 40) / 2
+        return CGSize(width: width, height: 250)
+    }
+}
+
