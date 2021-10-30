@@ -48,6 +48,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         navigationItem.searchController = searchController
         //fetchSearch()
         addCollectionView()
+        addViewModelListeners()
         viewModel.getdata()
         
         /*Service.shared.fetchSearch(term: "micheal jackson", entity: "movie") { result in
@@ -59,15 +60,29 @@ class MainViewController: BaseViewController<MainViewModel> {
             }
         }*/
     }
+    
     /*private func fetchSearch(){
         serviceRequestModel.fetchSearch(with: "micheal jackson", isEntity: "song") { (dataResponse) in
             self.dataResponse = dataResponse
             print(self.dataResponse)
         }
     }*/
+    private func addViewModelListeners() {
+        viewModel.subscribeState { [weak self] state in
+            switch state {
+            case .loading:
+                return
+            case .done:
+                self?.maincomponentC.reloadCollectionView()
+            default:
+                break
+            }
+        }
+    }
     private func addCollectionView(){
         maincomponentC = ItemCollectionView()
         maincomponentC.translatesAutoresizingMaskIntoConstraints = false
+        maincomponentC.delegate = viewModel
         //maincomponentC.delegate = self
         view.addSubview(maincomponentC)
         

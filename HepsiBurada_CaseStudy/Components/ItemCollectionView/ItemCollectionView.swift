@@ -10,7 +10,7 @@ import UIKit
 
 class ItemCollectionView: GenericBaseView<ItemCollectionViewData> {
     let cellId = "deneme"
-
+    weak var delegate : ItemCollectionProtocol?
     private lazy var componentCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -44,18 +44,26 @@ class ItemCollectionView: GenericBaseView<ItemCollectionViewData> {
         ])
     
     }
+    func reloadCollectionView(){
+        DispatchQueue.main.async {
+            self.componentCollectionView.reloadData()
+        }
+        
+    }
 
     
 }
 extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return delegate?.askNumberOfItem(in: section) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //guard let data = delegate?.askData(at: indexPath.row) else{fatalError("Data Invalid")}
         let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
         //cell.backgroundColor = .black
-        cell.layer.cornerRadius = 12 
+        cell.layer.cornerRadius = 12
+        //cell.setData(data)
         return cell
         
     }

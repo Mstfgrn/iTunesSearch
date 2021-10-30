@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    var data: SearchDataResponse?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //window?.rootViewController = navigationController
         window?.rootViewController = mainScene
         window?.makeKeyAndVisible() //Thanks to this func, w can see mainScene
-        print(EndpointHelper.searchKey(term: "micheal jackson", entity: "song").urlRequest.url)
+        //print(EndpointHelper.searchKey(term: "micheal jackson", entity: "song").urlRequest.url)
         //windowScene.keyWindow?.rootViewController = mainScene
     }
 

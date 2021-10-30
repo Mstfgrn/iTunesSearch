@@ -8,20 +8,29 @@
 import Foundation
 import DefaultNetworkOperationPackage
 class MainViewModel{
-    private var data: SearchDataResponse?
-    
+    var data: SearchDataResponse?
+    private var state: CollectionViewStateBlock?
+    private var resResult = [Results?]()
+    func subscribeState(completion: @escaping CollectionViewStateBlock) {
+        state = completion
+    }
     func getdata(){
         do{
             guard let urlRequest = try? ServiceProvider(request: getSearchRequest(term: "Apple", entity: "movie")).returnUrlRequest() else {return}
+            state?(.loading)
             fireApiCall(with: urlRequest) { [weak self] result in
                 switch result{
                 case .failure(let error):
                     print("error: \(error)")
                 case .success(let response):
                     self?.data = response
-                    print(self?.data ?? "data" )
-                    print("response: \(response)")
+                    self?.resResult = response.results!
+                    print("responseEEEEE: \(self?.resResult)")
+                    
+                    //print(self?.data ?? "data" )
+                    //print("response: \(response)")
                 }
+                self?.state?(.done)
             }
         }
     }
@@ -35,4 +44,19 @@ class MainViewModel{
         return SearchRequest(limit: 1, term: term, entity: entity)
     }
 
+}
+extension MainViewModel: ItemCollectionProtocol{
+    func askNumberOfSection() -> Int {
+        return 0
+    }
+    
+    func askNumberOfItem(in section: Int) -> Int {
+        return resResult.count ?? 0
+    }
+    
+    /*func askData(at index: Int) -> GenericDataProtocol? {
+        //guard let data = data else{return nil}
+        //return data
+    }*/
+    
 }
