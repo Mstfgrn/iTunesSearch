@@ -27,7 +27,7 @@ struct Results: Codable {
     let collectionPrice, trackPrice: Double?
     let formattedPrice: String?
     let price: Int?
-    let releaseDate: String?
+    let releaseDate: String
     let currency, resultDescription, shortDescription, longDescription: String?
 
     enum CodingKeys: String, CodingKey {
@@ -39,7 +39,7 @@ struct Results: Codable {
         case shortDescription, longDescription
     }
 
-    public init(trackID: Int?, artistID: Int?, collectionID: Int?, artistName: String?, collectionName: String?, trackName: String?, artworkUrl100: String?, collectionPrice: Double?, trackPrice: Double?, formattedPrice: String?, price: Int?, releaseDate: String?, currency: String?, resultDescription: String?, shortDescription: String?, longDescription: String?) {
+    public init(trackID: Int?, artistID: Int?, collectionID: Int?, artistName: String?, collectionName: String?, trackName: String?, artworkUrl100: String?, collectionPrice: Double?, trackPrice: Double?, formattedPrice: String?, price: Int?, releaseDate: String, currency: String?, resultDescription: String?, shortDescription: String?, longDescription: String?) {
         self.trackID = trackID
         self.artistID = artistID
         self.collectionID = collectionID

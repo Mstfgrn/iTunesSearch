@@ -20,9 +20,9 @@ class MainViewModel{
     func subscribeState(completion: @escaping CollectionViewStateBlock) {
         state = completion
     }
-    func getdata(){
+    func getdata(term: String, entity: String){
         do{
-            guard let urlRequest = try? ServiceProvider(request: getSearchRequest(term: "Apple", entity: "movie")).returnUrlRequest() else {return}
+            guard let urlRequest = try? ServiceProvider(request: getSearchRequest(term: term, entity: entity)).returnUrlRequest() else {return}
             state?(.loading)
             fireApiCall(with: urlRequest) { [weak self] result in
                 switch result{
@@ -30,7 +30,7 @@ class MainViewModel{
                     print("error: \(error)")
                 case .success(let response):
                     self?.data2 = response.results!
-                    //self?.resResult = response.results!
+                    self?.resResult = response.results!
                     //print("responseEEEEE: \(self?.resResult)")
                     
                     //print(self?.data ?? "data" )
@@ -49,14 +49,14 @@ class MainViewModel{
         APIManager.shared.executeRequest(urlRequest: request, completion: completion)
     }
     func getSearchRequest(term: String, entity: String) -> SearchRequest{
-        return SearchRequest(limit: 2, term: term, entity: entity)
+        return SearchRequest(limit: 20, term: term, entity: entity)
     }
 
 }
 extension MainViewModel: ItemCollectionProtocol{
     
-    func askData(at index: Int) -> [Any]? {
-        return data2
+    func askData(at index: Int) -> Results? {
+        return data2[index]
     }
     
     /*func askData(at index: Int) -> [Results]? {
