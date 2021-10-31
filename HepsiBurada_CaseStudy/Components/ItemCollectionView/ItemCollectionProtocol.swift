@@ -6,11 +6,12 @@
 //
 
 import Foundation
+
 protocol ItemCollectionProtocol: AnyObject {
     
     func askNumberOfSection() -> Int
     func askNumberOfItem(in section: Int) -> Int
-    //func askData(at index: Int) -> GenericDataProtocol?
+    func askData(at index: Int) -> [Any]?
 }
 extension ItemCollectionProtocol{
     func selectedItem(at index: Int){}

@@ -12,22 +12,9 @@ fileprivate extension Selector{
 }
 
 class MainViewController: BaseViewController<MainViewModel> {
-    //private var dataResponse: [SearchDataResponseS]?
-    //private var serviceRequestModel = ServiceRequestModel()
+    var data2: Resultss = []
     private var maincomponentC: ItemCollectionView!
-  
-
-    //let searchBar = UISearchBar()
-    //private var searchControllerComponent = UISearchController(searchResultsController: nil)
-    /*private lazy var test: UIButton = {
-        let temp = UIButton(type: .system)
-        temp.addTarget(self, action: .testButtonTapped, for: .touchUpInside)
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.setTitle("PUSH", for: .normal)
-        //temp.setTitleColor(.black, for: .normal)
-        //temp.setTitle("DOWN", for: .disabled)
-        return temp
-    }()*/
+    
     lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
@@ -46,27 +33,12 @@ class MainViewController: BaseViewController<MainViewModel> {
         view.backgroundColor = .green
         self.title = "HepsiBurada"
         navigationItem.searchController = searchController
-        //fetchSearch()
+        //viewModel.fetchCars(term: "micheal jackson", entity: "movie", completion:   resultHandler)
         addCollectionView()
         addViewModelListeners()
         viewModel.getdata()
-        
-        /*Service.shared.fetchSearch(term: "micheal jackson", entity: "movie") { result in
-            switch result{
-            case .success(let results):
-                print(results)
-            case .failure(let error):
-                print(error)
-            }
-        }*/
     }
     
-    /*private func fetchSearch(){
-        serviceRequestModel.fetchSearch(with: "micheal jackson", isEntity: "song") { (dataResponse) in
-            self.dataResponse = dataResponse
-            print(self.dataResponse)
-        }
-    }*/
     private func addViewModelListeners() {
         viewModel.subscribeState { [weak self] state in
             switch state {
@@ -100,21 +72,9 @@ class MainViewController: BaseViewController<MainViewModel> {
         
         ])
     }
-    //Test Func calls TestViewController, which is a new type of controller for testing dthe button of action.
-    //Window -> NavigationController ->MainViewController(This Class) -> Button -> TestViewController
-    /*@objc func testButtonAction(_ sender: UIButton){
-        print("Push Pressed ")
-        fireCharacterListView()
-        //let viewController = TestViewController()
-        //viewController.title = "MainViewController"
-        //Navigation Controller include array component [0,1,2,3,]
-        //self.navigationController?.viewControllers -> this component can many viewController
-        //self.navigationController?.popToViewController(UIViewController, animated: Bool) -> Thanks to the popviewController function, we can choose the index we want among the indexes.
-       // let navigationMainViewController = UINavigationController(rootViewController: viewController)
-        //navigationMainViewController.navigationBar.backgroundColor = .red
-        //self.navigationController?.pushViewController(viewController , animated: true)
-        //self.present(navigationMainViewController, animated: true, completion: nil) //-> This different of presentation like a permission page on week2
-    }
+    
+}
+/*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -122,9 +82,10 @@ class MainViewController: BaseViewController<MainViewModel> {
     private func fireCharacterListView() {
         let characterListView = CharacterListViewBuilder.builder()
         self.navigationController?.pushViewController(characterListView, animated: true)
-    }*/
+    }
     
-}
+}*/
+    
 extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating{
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
          

@@ -7,10 +7,16 @@
 
 import Foundation
 import DefaultNetworkOperationPackage
+typealias SearchCompletionBlock = (SearchDataResponse) -> Void
+typealias SearchResultBlock = (Result<SearchDataResponse, ErrorResponse>) -> Void
 class MainViewModel{
+    //private var dataFormatter: MainViewDataFormatter
+
     var data: SearchDataResponse?
     private var state: CollectionViewStateBlock?
     private var resResult = [Results?]()
+    var data2: Resultss = []
+    
     func subscribeState(completion: @escaping CollectionViewStateBlock) {
         state = completion
     }
@@ -23,9 +29,9 @@ class MainViewModel{
                 case .failure(let error):
                     print("error: \(error)")
                 case .success(let response):
-                    self?.data = response
-                    self?.resResult = response.results!
-                    print("responseEEEEE: \(self?.resResult)")
+                    self?.data2 = response.results!
+                    //self?.resResult = response.results!
+                    //print("responseEEEEE: \(self?.resResult)")
                     
                     //print(self?.data ?? "data" )
                     //print("response: \(response)")
@@ -34,29 +40,36 @@ class MainViewModel{
             }
         }
     }
-    private func dataHandler(with response: SearchDataResponse) {
-        self.data = response
-    }
+   
+    /*private func apiCallHandler(from response: SearchDataResponse) {
+        dataFormatter.setData(with: response)
+        state?(.done)
+    }*/
     private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<SearchDataResponse, ErrorResponse>) -> Void) {
         APIManager.shared.executeRequest(urlRequest: request, completion: completion)
     }
     func getSearchRequest(term: String, entity: String) -> SearchRequest{
-        return SearchRequest(limit: 1, term: term, entity: entity)
+        return SearchRequest(limit: 2, term: term, entity: entity)
     }
 
 }
 extension MainViewModel: ItemCollectionProtocol{
+    
+    func askData(at index: Int) -> [Any]? {
+        return data2
+    }
+    
+    /*func askData(at index: Int) -> [Results]? {
+        return data?.results
+    }*/
+    
     func askNumberOfSection() -> Int {
         return 0
     }
     
     func askNumberOfItem(in section: Int) -> Int {
-        return resResult.count ?? 0
+        return data2.count
+        // return dataFormatter.getNumbeOfItem(in: section)
     }
-    
-    /*func askData(at index: Int) -> GenericDataProtocol? {
-        //guard let data = data else{return nil}
-        //return data
-    }*/
     
 }

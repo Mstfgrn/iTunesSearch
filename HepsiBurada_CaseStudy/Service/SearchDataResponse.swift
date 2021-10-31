@@ -7,9 +7,9 @@
 import Foundation
 
 // MARK: - Welcome
-struct SearchDataResponse: Codable {
-    let resultCount: Int?
-    let results: [Results]?
+class SearchDataResponse: Codable {
+    var resultCount: Int?
+    var results: [Results]?
 
     init(resultCount: Int?, results: [Results]?) {
         self.resultCount = resultCount
@@ -18,6 +18,8 @@ struct SearchDataResponse: Codable {
 }
 
 // MARK: - Result
+typealias Resultss = [Results]
+typealias searchDataResponses = [SearchDataResponse]
 struct Results: Codable {
     let trackID, artistID, collectionID: Int?
     let artistName, collectionName, trackName: String?
@@ -55,4 +57,5 @@ struct Results: Codable {
         self.shortDescription = shortDescription
         self.longDescription = longDescription
     }
+    
 }

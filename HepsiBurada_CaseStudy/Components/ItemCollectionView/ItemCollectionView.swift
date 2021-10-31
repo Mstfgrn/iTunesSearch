@@ -63,7 +63,10 @@ extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
         //cell.backgroundColor = .black
         cell.layer.cornerRadius = 12
-        //cell.setData(data)
+        let resuResult = delegate?.askData(at: indexPath.row)
+        print("REEEEEEEEEEEEE:\(resuResult)")
+        //cell.setData(res: resuResult)
+        //cell.passData(name: resuResult.., price: T##String, date: T##String)
         return cell
         
     }

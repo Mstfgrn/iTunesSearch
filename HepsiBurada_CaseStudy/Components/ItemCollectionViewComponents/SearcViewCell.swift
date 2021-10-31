@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 class SearcViewCell: UICollectionViewCell {
-    /*var resResult: Results!{
+    /*var resResult: Results{
         didSet{
-                                      book/song               movie/software
-            collectionName.text = resResult.collectionName ?? resResult.trackName
-                                  book/song/movie
-            collectionPrice.text = (resResult.collectionPrice)?.description ?? resResult.formattedPrice
+             //                         book/song               movie/software
+            collectionName.text = resResult.collectionName// ?? resResult.trackName
+             //                     book/song/movie
+            collectionPrice.text = resResult.formattedPrice//(resResult.collectionPrice)?.description ??
             releaseDate.text = resResult.releaseDate
         }
     }*/
@@ -90,4 +90,15 @@ class SearcViewCell: UICollectionViewCell {
         
         
     }
+    func passData(name: String, price: String, date: String){
+        collectionName.text = name
+        collectionPrice.text = price
+        releaseDate.text = date
+    }
+    func setData(res: Results) {
+            //carImageView.load(url: URL(string: car.photo.thumbnail)!)
+        collectionName.text  = res.collectionName
+        collectionPrice.text = "$\(res.collectionPrice)"
+        releaseDate.text = res.releaseDate
+        }
 }
