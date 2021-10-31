@@ -59,17 +59,12 @@ extension MainViewModel: ItemCollectionProtocol{
         return data2[index]
     }
     
-    /*func askData(at index: Int) -> [Results]? {
-        return data?.results
-    }*/
-    
     func askNumberOfSection() -> Int {
         return 0
     }
     
     func askNumberOfItem(in section: Int) -> Int {
         return data2.count
-        // return dataFormatter.getNumbeOfItem(in: section)
     }
     
 }

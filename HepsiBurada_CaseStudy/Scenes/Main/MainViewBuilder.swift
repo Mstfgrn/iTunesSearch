@@ -12,10 +12,6 @@ class MainViewBuilder {
         let viewModel = MainViewModel()
         let viewController = MainViewController(viewModel: viewModel)
         let navigationViewController = UINavigationController(rootViewController: viewController)
-        //viewController.title = "HepsiBurada"
-        
-        //viewController.navigationController?.setNavigationBarHidden(true, animated: false)
-        //return viewController
         return navigationViewController
     }
 }

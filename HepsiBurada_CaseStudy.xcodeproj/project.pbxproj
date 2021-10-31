@@ -44,11 +44,6 @@
 		2BCDFC0E272BA33C009F5709 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC0D272BA33C009F5709 /* ServiceProvider.swift */; };
 		2BCDFC10272BAADF009F5709 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC0F272BAADF009F5709 /* SearchRequest.swift */; };
 		2BCDFC13272C438A009F5709 /* SearcViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC12272C438A009F5709 /* SearcViewCell.swift */; };
-		2BCDFC19272C470B009F5709 /* CustomImageViewComponentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC15272C470B009F5709 /* CustomImageViewComponentContainer.swift */; };
-		2BCDFC1A272C470B009F5709 /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC16272C470B009F5709 /* CustomImageViewComponentData.swift */; };
-		2BCDFC1B272C470B009F5709 /* CustomImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC17272C470B009F5709 /* CustomImageViewComponent.swift */; };
-		2BCDFC1C272C470B009F5709 /* CustomImageLoadingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC18272C470B009F5709 /* CustomImageLoadingType.swift */; };
-		2BCDFC20272C4C87009F5709 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC1F272C4C87009F5709 /* ImageCacheManager.swift */; };
 		2BCDFC2A272C8190009F5709 /* UILayoutHelpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFC29272C8190009F5709 /* UILayoutHelpers+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,11 +105,6 @@
 		2BCDFC0D272BA33C009F5709 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		2BCDFC0F272BAADF009F5709 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		2BCDFC12272C438A009F5709 /* SearcViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearcViewCell.swift; sourceTree = "<group>"; };
-		2BCDFC15272C470B009F5709 /* CustomImageViewComponentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentContainer.swift; sourceTree = "<group>"; };
-		2BCDFC16272C470B009F5709 /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
-		2BCDFC17272C470B009F5709 /* CustomImageViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponent.swift; sourceTree = "<group>"; };
-		2BCDFC18272C470B009F5709 /* CustomImageLoadingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageLoadingType.swift; sourceTree = "<group>"; };
-		2BCDFC1F272C4C87009F5709 /* ImageCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		2BCDFC29272C8190009F5709 /* UILayoutHelpers+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutHelpers+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,7 +157,6 @@
 		2BCDFB4C272784AB009F5709 /* HepsiBurada_CaseStudy */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFC1D272C4C87009F5709 /* Manager */,
 				2BCDFBF6272A463B009F5709 /* Service */,
 				2BCDFBA627283CE9009F5709 /* Components */,
 				2BCDFBA327283928009F5709 /* Model */,
@@ -278,7 +267,6 @@
 		2BCDFBA627283CE9009F5709 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFC14272C470B009F5709 /* CustomImageViewComponent */,
 				2BCDFC11272C433C009F5709 /* ItemCollectionViewComponents */,
 				2BCDFBA727283CEF009F5709 /* ItemCollectionView */,
 			);
@@ -327,33 +315,6 @@
 				2BCDFC12272C438A009F5709 /* SearcViewCell.swift */,
 			);
 			path = ItemCollectionViewComponents;
-			sourceTree = "<group>";
-		};
-		2BCDFC14272C470B009F5709 /* CustomImageViewComponent */ = {
-			isa = PBXGroup;
-			children = (
-				2BCDFC15272C470B009F5709 /* CustomImageViewComponentContainer.swift */,
-				2BCDFC16272C470B009F5709 /* CustomImageViewComponentData.swift */,
-				2BCDFC17272C470B009F5709 /* CustomImageViewComponent.swift */,
-				2BCDFC18272C470B009F5709 /* CustomImageLoadingType.swift */,
-			);
-			path = CustomImageViewComponent;
-			sourceTree = "<group>";
-		};
-		2BCDFC1D272C4C87009F5709 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				2BCDFC1E272C4C87009F5709 /* CacheManagers */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		2BCDFC1E272C4C87009F5709 /* CacheManagers */ = {
-			isa = PBXGroup;
-			children = (
-				2BCDFC1F272C4C87009F5709 /* ImageCacheManager.swift */,
-			);
-			path = CacheManagers;
 			sourceTree = "<group>";
 		};
 		2BCDFC28272C816F009F5709 /* LabelHelpers */ = {
@@ -504,7 +465,6 @@
 				2BCDFB922727923A009F5709 /* BaseTableViewCell.swift in Sources */,
 				2BCDFC2A272C8190009F5709 /* UILayoutHelpers+Extensions.swift in Sources */,
 				2BCDFBA927283D0D009F5709 /* ItemCollectionView.swift in Sources */,
-				2BCDFC1A272C470B009F5709 /* CustomImageViewComponentData.swift in Sources */,
 				2BCDFC13272C438A009F5709 /* SearcViewCell.swift in Sources */,
 				2BCDFB9B27279E94009F5709 /* MainViewController.swift in Sources */,
 				2B88F412272E2BF3003067C9 /* MainViewDataFormatter.swift in Sources */,
@@ -523,14 +483,10 @@
 				2BCDFBAB27283D34009F5709 /* ItemCollectionViewData.swift in Sources */,
 				2BCDFB4E272784AB009F5709 /* AppDelegate.swift in Sources */,
 				2BCDFC0E272BA33C009F5709 /* ServiceProvider.swift in Sources */,
-				2BCDFC20272C4C87009F5709 /* ImageCacheManager.swift in Sources */,
 				2BCDFB932727923A009F5709 /* BaseViewModel.swift in Sources */,
-				2BCDFC1C272C470B009F5709 /* CustomImageLoadingType.swift in Sources */,
 				2BCDFB50272784AB009F5709 /* SceneDelegate.swift in Sources */,
 				2BCDFB912727923A009F5709 /* BaseViewController.swift in Sources */,
-				2BCDFC19272C470B009F5709 /* CustomImageViewComponentContainer.swift in Sources */,
 				2B7D7584272D199C0085760C /* CollectionViewState.swift in Sources */,
-				2BCDFC1B272C470B009F5709 /* CustomImageViewComponent.swift in Sources */,
 				2BCDFBA22727A584009F5709 /* FontManager.swift in Sources */,
 				2BCDFBFD272A5F16009F5709 /* ItemCollectionProtocol.swift in Sources */,
 				2BCDFC0A272B9554009F5709 /* ErrorMessage.swift in Sources */,

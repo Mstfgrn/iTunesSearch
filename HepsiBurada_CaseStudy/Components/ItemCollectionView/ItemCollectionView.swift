@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ItemCollectionView: GenericBaseView<ItemCollectionViewData> {
-    let cellId = "deneme"
+    let cellId = "cellId"
     weak var delegate : ItemCollectionProtocol?
     private lazy var componentCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -65,10 +65,8 @@ extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.cornerRadius = 12
 
         guard let resuResult = delegate?.askData(at: indexPath.row) else{return UICollectionViewCell()}
-        print("REEEEEEEEEEEEE:\(resuResult)")
+        //print("Response:\(resuResult)")
         cell.configure(res: resuResult)
-        //cell.setData(res: resuResult)
-        //cell.passData(name: resuResult.., price: T##String, date: T##String)
         return cell
         
     }

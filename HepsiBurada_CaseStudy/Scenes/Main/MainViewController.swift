@@ -20,13 +20,11 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
-        //search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Search"
         search.searchBar.sizeToFit()
         search.searchBar.searchBarStyle = .prominent
         search.searchBar.scopeButtonTitles = ["Movies","Music","Apps","Books"]
-        //search.hidesNavigationBarDuringPresentation = false
     
         //movie = movie, music = musicVideo song, apps = software, book = audiobook
         search.searchBar.delegate = self
@@ -62,7 +60,6 @@ class MainViewController: BaseViewController<MainViewModel> {
         maincomponentC = ItemCollectionView()
         maincomponentC.translatesAutoresizingMaskIntoConstraints = false
         maincomponentC.delegate = viewModel
-        //maincomponentC.delegate = self
         view.addSubview(maincomponentC)
         
        
@@ -79,16 +76,6 @@ class MainViewController: BaseViewController<MainViewModel> {
         
         ])
     }
-    /*func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        if let text = searchBar.text{
-            data2 = []
-            self.maincomponentC.reloadCollectionView()
-            viewModel.getdata(term: text, entity: "movie")
-        }
-    }*/
-    
-    
 }
 /*
     override func viewWillAppear(_ animated: Bool) {

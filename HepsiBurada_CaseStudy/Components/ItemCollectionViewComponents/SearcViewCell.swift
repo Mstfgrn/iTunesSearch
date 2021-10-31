@@ -28,7 +28,6 @@ class SearcViewCell: UICollectionViewCell {
         let temp = UIStackView(arrangedSubviews: [collectionName,collectionPrice,releaseDate])
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.alignment = .center
-        //temp.distribution = .fill
         temp.axis = .vertical
         temp.spacing = 5
         return temp
@@ -36,10 +35,7 @@ class SearcViewCell: UICollectionViewCell {
     private lazy var imageViewComponent: UIImageView = {
         let temp = UIImageView()
         temp.translatesAutoresizingMaskIntoConstraints = false
-        //temp.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //temp.widthAnchor.constraint(equalToConstant: 50).isActive = true
         temp.image = UIImage(named: "notif_")
-        
         temp.layer.cornerRadius = 12
         temp.clipsToBounds = true
         temp.contentMode = .scaleAspectFit
@@ -53,7 +49,6 @@ class SearcViewCell: UICollectionViewCell {
     private lazy var collectionName: UILabel = {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.text = "I Love Michael Jackson edition"
         temp.font = FontManager.bold(12).value
         temp.numberOfLines = 2
         temp.textAlignment = .center
@@ -63,7 +58,6 @@ class SearcViewCell: UICollectionViewCell {
     private lazy var collectionPrice: UILabel = {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.text = "collectionPrice"
         temp.font = FontManager.regular(12).value
         temp.numberOfLines = 0
         temp.textAlignment = .center
@@ -73,7 +67,6 @@ class SearcViewCell: UICollectionViewCell {
     private lazy var releaseDate: UILabel = {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.text = "releaseDate"
         temp.font = FontManager.regular(12).value
         temp.textAlignment = .center
         temp.numberOfLines = 0
@@ -98,11 +91,6 @@ class SearcViewCell: UICollectionViewCell {
         mainStackView.anchor(top: imageViewComponent.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 3, bottom: 0, right: 3), size: .init())
         
         
-    }
-    func passData(name: String, price: String, date: String){
-        collectionName.text = name
-        collectionPrice.text = price
-        releaseDate.text = date
     }
     func configure(res: Results) {
         imageViewComponent.load(url: URL(string: res.artworkUrl100!)!)
