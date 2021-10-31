@@ -93,10 +93,11 @@ extension MainViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         entityValue = entities[selectedScope]
         if let text = searchBar.text{
-            data2 = []
-            self.maincomponentC.reloadCollectionView()
-            viewModel.getdata(term: text, entity: entityValue)
-        }
+            if searchBar.text!.count > 2{
+                data2 = []
+                self.maincomponentC.reloadCollectionView()
+                viewModel.getdata(term: text, entity: entityValue)}
+    }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -104,12 +105,13 @@ extension MainViewController: UISearchBarDelegate{
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let text = searchBar.text{
-            data2 = []
-            self.maincomponentC.reloadCollectionView()
-            viewModel.getdata(term: text, entity: entityValue)
-        }
-        
+            if searchBar.text!.count > 2{
+                data2 = []
+                self.maincomponentC.reloadCollectionView()
+                viewModel.getdata(term: text, entity: entityValue)}
     }
+    
+}
 }
 /*extension MainViewController: ItemCollectionProtocol{
     
