@@ -6,15 +6,16 @@
 //
 
 import UIKit
-
+import DefaultNetworkOperationPackage
 fileprivate extension Selector{
     //static let testButtonTapped = #selector(MainViewController.testButtonAction)
 }
-
+let cellId = "deneme"
+private var resulTT = [Results]()
 class MainViewController: BaseViewController<MainViewModel> {
     //private var dataResponse: [SearchDataResponseS]?
     //private var serviceRequestModel = ServiceRequestModel()
-    private var maincomponentC: ItemCollectionView!
+   // private var maincomponentC: ItemCollectionView!
   
 
     //let searchBar = UISearchBar()
@@ -28,6 +29,19 @@ class MainViewController: BaseViewController<MainViewModel> {
         //temp.setTitle("DOWN", for: .disabled)
         return temp
     }()*/
+    private lazy var componentCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let temp = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.delegate = self
+        temp.dataSource = self
+        temp.register(SearcViewCell.self, forCellWithReuseIdentifier: cellId)
+        return temp
+    }()
     lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
@@ -48,42 +62,53 @@ class MainViewController: BaseViewController<MainViewModel> {
         navigationItem.searchController = searchController
         //fetchSearch()
         addCollectionView()
-        viewModel.getdata()
-        
-        /*Service.shared.fetchSearch(term: "micheal jackson", entity: "movie") { result in
-            switch result{
-            case .success(let results):
-                print(results)
-            case .failure(let error):
-                print(error)
-            }
-        }*/
+        //viewModel.getdata()
+        getdata()
+
     }
-    /*private func fetchSearch(){
-        serviceRequestModel.fetchSearch(with: "micheal jackson", isEntity: "song") { (dataResponse) in
-            self.dataResponse = dataResponse
-            print(self.dataResponse)
+    private var data: SearchDataResponse?
+    
+    func getdata(){
+        do{
+            guard let urlRequest = try? ServiceProvider(request: getSearchRequest(term: "Apple", entity: "movie")).returnUrlRequest() else {return}
+            fireApiCall(with: urlRequest) { [weak self] result in
+                switch result{
+                case .failure(let error):
+                    print("error: \(error)")
+                case .success(let response):
+                    self?.data = response
+                    resulTT = response.results!
+                    print("REEEE: \(resulTT)")
+                    //print(self?.data ?? "data" )
+                    //print("response: \(response)")
+                }
+            }
         }
-    }*/
+    }
+    private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<SearchDataResponse, ErrorResponse>) -> Void) {
+        APIManager.shared.executeRequest(urlRequest: request, completion: completion)
+    }
+    func getSearchRequest(term: String, entity: String) -> SearchRequest{
+        return SearchRequest(limit: 1, term: term, entity: entity)
+    }
+    
     private func addCollectionView(){
-        maincomponentC = ItemCollectionView()
-        maincomponentC.translatesAutoresizingMaskIntoConstraints = false
-        //maincomponentC.delegate = self
-        view.addSubview(maincomponentC)
+        view.addSubview(componentCollectionView)
         
        
         NSLayoutConstraint.activate([
         
-            maincomponentC.topAnchor.constraint(equalTo: view.topAnchor),
+            componentCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             
-            maincomponentC.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            componentCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            maincomponentC.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            componentCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
-            maincomponentC.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            componentCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         
         
         ])
+    
     }
     //Test Func calls TestViewController, which is a new type of controller for testing dthe button of action.
     //Window -> NavigationController ->MainViewController(This Class) -> Button -> TestViewController
@@ -117,6 +142,27 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
         
+    }
+}
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
+        //cell.backgroundColor = .black
+        cell.layer.cornerRadius = 12
+        return cell
+        
+    }
+    
+}
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (UIScreen.main.bounds.width - 40) / 2
+        return CGSize(width: width, height: 250)
     }
 }
 /*extension MainViewController: ItemCollectionProtocol{

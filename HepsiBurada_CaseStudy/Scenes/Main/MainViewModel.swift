@@ -25,9 +25,6 @@ class MainViewModel{
             }
         }
     }
-    private func dataHandler(with response: SearchDataResponse) {
-        self.data = response
-    }
     private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<SearchDataResponse, ErrorResponse>) -> Void) {
         APIManager.shared.executeRequest(urlRequest: request, completion: completion)
     }

@@ -18,15 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene) // We are decleare window scene here
         
-        let mainScene = MainViewBuilder.build() //This builder func is return viewController taking from MainViewModel
-        //let mainTabBar = MainTabBarBuilder.build()
-        //let navigationController = UINavigationController(rootViewController: mainScene)
-        //?.rootViewController = mainScene //Execute mainScene to rootViewController
-        //window?.rootViewController = navigationController
+        let mainScene = MainViewBuilder.build()
         window?.rootViewController = mainScene
-        window?.makeKeyAndVisible() //Thanks to this func, w can see mainScene
-        print(EndpointHelper.searchKey(term: "micheal jackson", entity: "song").urlRequest.url)
-        //windowScene.keyWindow?.rootViewController = mainScene
+        window?.makeKeyAndVisible()
+        //print(EndpointHelper.searchKey(term: "micheal jackson", entity: "song").urlRequest.url)
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

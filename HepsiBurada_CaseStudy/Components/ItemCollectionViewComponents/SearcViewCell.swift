@@ -8,6 +8,15 @@
 import Foundation
 import UIKit
 class SearcViewCell: UICollectionViewCell {
+    /*var resResult: Results{
+        didSet{
+             //                         book/song               movie/software
+            collectionName.text = resResult.collectionName// ?? resResult.trackName
+             //                     book/song/movie
+            collectionPrice.text = resResult.formattedPrice//(resResult.collectionPrice)?.description ??
+            releaseDate.text = resResult.releaseDate
+        }
+    }*/
     private lazy var mainStackView: UIStackView = {
         let temp = UIStackView(arrangedSubviews: [collectionName,collectionPrice,releaseDate])
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +35,7 @@ class SearcViewCell: UICollectionViewCell {
         
         temp.layer.cornerRadius = 12
         temp.clipsToBounds = true
-        temp.contentMode = .scaleToFill
+        temp.contentMode = .scaleAspectFit
         //temp.layer.shadowColor = UIColor.black.cgColor
        // temp.layer.shadowOffset = CGSize(width: 0, height: 2)
         //temp.layer.shadowRadius = 4
@@ -40,6 +49,7 @@ class SearcViewCell: UICollectionViewCell {
         temp.text = "I Love Michael Jackson edition"
         temp.font = FontManager.bold(12).value
         temp.numberOfLines = 2
+        temp.textAlignment = .center
         temp.textColor = .black
         return temp
     }()
@@ -48,7 +58,8 @@ class SearcViewCell: UICollectionViewCell {
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.text = "collectionPrice"
         temp.font = FontManager.regular(12).value
-        temp.numberOfLines = 2
+        temp.numberOfLines = 0
+        temp.textAlignment = .center
         temp.textColor = .black
         return temp
     }()
@@ -57,6 +68,7 @@ class SearcViewCell: UICollectionViewCell {
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.text = "releaseDate"
         temp.font = FontManager.regular(12).value
+        temp.textAlignment = .center
         temp.numberOfLines = 0
         temp.textColor = .black
         return temp
@@ -73,9 +85,10 @@ class SearcViewCell: UICollectionViewCell {
         addSubview(imageViewComponent)
         addSubview(mainStackView)
 
-        imageViewComponent.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 10, bottom: 0, right: 10), size: .init(width: 150, height: 150))
-        mainStackView.anchor(top: imageViewComponent.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 10, bottom: 0, right: 10), size: .init())
+        imageViewComponent.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 10, left: 18, bottom: 0, right:0  ), size: .init(width: 150, height: 150))
+        mainStackView.anchor(top: imageViewComponent.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 3, bottom: 0, right: 3), size: .init())
         
         
     }
+    
 }
