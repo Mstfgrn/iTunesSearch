@@ -110,6 +110,24 @@ class MainViewController: BaseViewController<MainViewModel> {
         ])
     
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return resulTT.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
+        //cell.backgroundColor = .black
+        let resultarr = resulTT[indexPath.item]
+        cell.resResult = resultarr
+        //componentCollectionView.reloadData()
+        cell.layer.cornerRadius = 12
+        return cell
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (UIScreen.main.bounds.width - 40) / 2
+        return CGSize(width: width, height: 250)
+    }
     //Test Func calls TestViewController, which is a new type of controller for testing dthe button of action.
     //Window -> NavigationController ->MainViewController(This Class) -> Button -> TestViewController
     /*@objc func testButtonAction(_ sender: UIButton){
@@ -145,28 +163,13 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating{
     }
 }
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return resulTT.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
-        //cell.backgroundColor = .black
-        let resultarr = resulTT[indexPath.item]
-        cell.resResult = resultarr
-        componentCollectionView.reloadData()
-        cell.layer.cornerRadius = 12
-        return cell
-        
-    }
+    
+    
     
 }
 extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = (UIScreen.main.bounds.width - 40) / 2
-        return CGSize(width: width, height: 250)
-    }
+    
 }
 /*extension MainViewController: ItemCollectionProtocol{
     
