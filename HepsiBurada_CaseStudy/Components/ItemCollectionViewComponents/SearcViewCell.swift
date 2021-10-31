@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 class SearcViewCell: UICollectionViewCell {
     /*var resResult: Results{
         didSet{
@@ -17,6 +18,16 @@ class SearcViewCell: UICollectionViewCell {
             releaseDate.text = resResult.releaseDate
         }
     }*/
+    var resResult: Results! {
+            didSet {
+                collectionName.text = resResult.collectionName// ?? resResult.trackName
+                collectionPrice.text = resResult.formattedPrice//(resResult.collectionPrice)?.description ??
+                releaseDate.text = resResult.releaseDate
+                
+                guard let url = URL(string: resResult.artworkUrl100 ?? "") else {return}
+                imageViewComponent.sd_setImage(with: url)
+            }
+        }
     private lazy var mainStackView: UIStackView = {
         let temp = UIStackView(arrangedSubviews: [collectionName,collectionPrice,releaseDate])
         temp.translatesAutoresizingMaskIntoConstraints = false

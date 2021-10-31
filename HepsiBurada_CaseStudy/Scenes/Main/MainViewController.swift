@@ -10,13 +10,15 @@ import DefaultNetworkOperationPackage
 fileprivate extension Selector{
     //static let testButtonTapped = #selector(MainViewController.testButtonAction)
 }
-let cellId = "deneme"
-private var resulTT = [Results]()
 class MainViewController: BaseViewController<MainViewModel> {
     //private var dataResponse: [SearchDataResponseS]?
     //private var serviceRequestModel = ServiceRequestModel()
    // private var maincomponentC: ItemCollectionView!
-  
+    let cellId = "deneme"
+        private var resulTT = [Results]()
+        var data: SearchDataResponse?
+        //private var resResult = [Results?]()
+        //var data2: Resultss = []
 
     //let searchBar = UISearchBar()
     //private var searchControllerComponent = UISearchController(searchResultsController: nil)
@@ -65,9 +67,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         //viewModel.getdata()
         getdata()
 
-    }
-    private var data: SearchDataResponse?
-    
+    }    
     func getdata(){
         do{
             guard let urlRequest = try? ServiceProvider(request: getSearchRequest(term: "Apple", entity: "movie")).returnUrlRequest() else {return}
@@ -77,8 +77,8 @@ class MainViewController: BaseViewController<MainViewModel> {
                     print("error: \(error)")
                 case .success(let response):
                     self?.data = response
-                    resulTT = response.results!
-                    print("REEEE: \(resulTT)")
+                    self?.resulTT = response.results!
+                    print("REEEE: \(self?.resulTT)")
                     //print(self?.data ?? "data" )
                     //print("response: \(response)")
                 }
@@ -146,12 +146,15 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating{
 }
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return resulTT.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
         //cell.backgroundColor = .black
+        let resultarr = resulTT[indexPath.item]
+        cell.resResult = resultarr
+        componentCollectionView.reloadData()
         cell.layer.cornerRadius = 12
         return cell
         
