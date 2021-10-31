@@ -25,7 +25,7 @@ class MainViewController: BaseViewController<MainViewModel> {
         search.searchBar.sizeToFit()
         search.searchBar.searchBarStyle = .prominent
         search.searchBar.scopeButtonTitles = ["Movies","Music","Apps","Books"]
-    
+        
         //movie = movie, music = musicVideo song, apps = software, book = audiobook
         search.searchBar.delegate = self
         return search
@@ -62,9 +62,9 @@ class MainViewController: BaseViewController<MainViewModel> {
         maincomponentC.delegate = viewModel
         view.addSubview(maincomponentC)
         
-       
-        NSLayoutConstraint.activate([
         
+        NSLayoutConstraint.activate([
+            
             maincomponentC.topAnchor.constraint(equalTo: view.topAnchor),
             
             maincomponentC.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -72,23 +72,23 @@ class MainViewController: BaseViewController<MainViewModel> {
             maincomponentC.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
             maincomponentC.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        
-        
+            
+            
         ])
     }
 }
 /*
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    private func fireCharacterListView() {
-        let characterListView = CharacterListViewBuilder.builder()
-        self.navigationController?.pushViewController(characterListView, animated: true)
-    }
-    
-}*/
-    
+ override func viewWillAppear(_ animated: Bool) {
+ super.viewWillAppear(animated)
+ self.navigationController?.setNavigationBarHidden(true, animated: true)
+ }
+ private func fireCharacterListView() {
+ let characterListView = CharacterListViewBuilder.builder()
+ self.navigationController?.pushViewController(characterListView, animated: true)
+ }
+ 
+ }*/
+
 extension MainViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         entityValue = entities[selectedScope]
@@ -97,21 +97,19 @@ extension MainViewController: UISearchBarDelegate{
                 data2 = []
                 self.maincomponentC.reloadCollectionView()
                 viewModel.getdata(term: text, entity: entityValue)}
-    }
+        }
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let text = searchBar.text{
             if searchBar.text!.count > 2{
                 data2 = []
                 self.maincomponentC.reloadCollectionView()
                 viewModel.getdata(term: text, entity: entityValue)}
+        }
+        
+        
     }
-    
-}
 }
 /*extension MainViewController: ItemCollectionProtocol{
     
