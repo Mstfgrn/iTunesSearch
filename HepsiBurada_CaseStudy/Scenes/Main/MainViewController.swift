@@ -7,16 +7,13 @@
 
 import UIKit
 
-fileprivate extension Selector{
-    //static let testButtonTapped = #selector(MainViewController.testButtonAction)
-}
-
 class MainViewController: BaseViewController<MainViewModel> {
-    var data2: Resultss = []
     var entityValue: String = "movie"//Default Value
+    
+    //The entity variable scopbuttontitle(when switching between segments) It keeps the entity words that I need to enter as parameters when I make APICall in a string.
     var entities = [SegmentHelper.Movies.rawValue, SegmentHelper.Music.rawValue, SegmentHelper.Apps.rawValue, SegmentHelper.Books.rawValue]
     
-    private var maincomponentC: ItemCollectionView!
+    private var maincomponentC: ItemCollectionView!//It contains the collectionView structure that will hold the items in the UIview Class, which I did not initialize.
     
     lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
@@ -25,7 +22,6 @@ class MainViewController: BaseViewController<MainViewModel> {
         search.searchBar.sizeToFit()
         search.searchBar.searchBarStyle = .prominent
         search.searchBar.scopeButtonTitles = ["Movies","Music","Apps","Books"]
-        
         //movie = movie, music = musicVideo song, apps = software, book = audiobook
         search.searchBar.delegate = self
         return search
@@ -35,13 +31,12 @@ class MainViewController: BaseViewController<MainViewModel> {
         super.prepareViewControllerConfigurations()
         view.backgroundColor = .green
         self.title = "HepsiBurada"
+        self.navigationController?.hidesBarsOnSwipe = true;
         navigationItem.searchController = searchController
         //viewModel.fetchCars(term: "micheal jackson", entity: "movie", completion:   resultHandler)
-        print(SegmentHelper.allValues)
         addCollectionView()
-        print(entityValue)
         addViewModelListeners()
-        viewModel.getdata(term: "apple", entity: entityValue )
+        viewModel.getdata(term: "apple", entity: entityValue ) //default ApıCall For Movie
     }
     
     private func addViewModelListeners() {
@@ -50,16 +45,28 @@ class MainViewController: BaseViewController<MainViewModel> {
             case .loading:
                 return
             case .done:
-                self?.maincomponentC.reloadCollectionView()
+                self?.maincomponentC.reloadCollectionView()//The function where I reload the collectionView after the call is over.
             default:
                 break
             }
         }
+        viewModel.subscribeDetailViewState {[weak self] data in
+            self?.fireDetail(with: data)
+        }
     }
+    
+    private func fireDetail(with data: ItemDetailViewRequest){
+        
+        let detailViewController = SearchCellDetailViewBuilder.build(with: data)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
     private func addCollectionView(){
+        //I create the object of the ItemCollectionView structure and determine it on the controller with the necessary constraints.
         maincomponentC = ItemCollectionView()
         maincomponentC.translatesAutoresizingMaskIntoConstraints = false
         maincomponentC.delegate = viewModel
+        //I specify that the Delegation of the ItemCollectionProtocol type that I defined in the ItemCollectionView class should listen to the ViewModel on the controller. Thanks to this, I will be able to access the data in the view model on this delegation and pass it to the UIview Component, which is independent of the model and controller.
         view.addSubview(maincomponentC)
         
         
@@ -77,24 +84,14 @@ class MainViewController: BaseViewController<MainViewModel> {
         ])
     }
 }
-/*
- override func viewWillAppear(_ animated: Bool) {
- super.viewWillAppear(animated)
- self.navigationController?.setNavigationBarHidden(true, animated: true)
- }
- private func fireCharacterListView() {
- let characterListView = CharacterListViewBuilder.builder()
- self.navigationController?.pushViewController(characterListView, animated: true)
- }
- 
- }*/
 
 extension MainViewController: UISearchBarDelegate{
+   // Thanks to these two searchBar methods, I make an APICall in one according to each character change on the text, and in the other according to the segment change with this text. Before every APICall I make, I reset the Data2 array that I keep in the incoming Response on the MainViewModel. In this way, it does not create a disadvantage for memory.
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         entityValue = entities[selectedScope]
         if let text = searchBar.text{
             if searchBar.text!.count > 2{
-                data2 = []
+                viewModel.data2 = []
                 self.maincomponentC.reloadCollectionView()
                 viewModel.getdata(term: text, entity: entityValue)}
         }
@@ -103,19 +100,9 @@ extension MainViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let text = searchBar.text{
             if searchBar.text!.count > 2{
-                data2 = []
+                viewModel.data2 = []
                 self.maincomponentC.reloadCollectionView()
                 viewModel.getdata(term: text, entity: entityValue)}
         }
-        
-        
     }
 }
-/*extension MainViewController: ItemCollectionProtocol{
-    
-    func didTapButton() {
-        self.navigationController?.pushViewController(SearchCellDetailController(), animated: true)
-    }
-    
-    
-}*/

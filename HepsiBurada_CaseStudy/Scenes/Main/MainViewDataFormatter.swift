@@ -33,6 +33,10 @@ class MainViewDataFormatter  {
         self.list.append(contentsOf: response.results!)
     }
     
+    func getItemId(at index: Int) -> Int {
+        return list[index].collectionID ?? list[index].trackID!
+    }
+    
     
     
     

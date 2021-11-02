@@ -8,7 +8,7 @@
 import UIKit
 
 enum FontManager: GenericValueProtocol {
-    
+    //Thanks to the font manager, it allows me to easily get the font I want during my design on UIview.
     typealias Value = UIFont
     
     var value: UIFont {

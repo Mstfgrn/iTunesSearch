@@ -63,12 +63,21 @@ extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = componentCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearcViewCell
         //cell.backgroundColor = .black
         cell.layer.cornerRadius = 12
-
         guard let resuResult = delegate?.askData(at: indexPath.row) else{return UICollectionViewCell()}
         //print("Response:\(resuResult)")
         cell.configure(res: resuResult)
         return cell
         
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isUserInteractionEnabled = false
+        cell?.startTappedAnimation(with: { [weak self] finish in
+            if finish {
+                self?.delegate?.selectedItem(at: indexPath.row)
+                cell?.isUserInteractionEnabled = true
+            }
+        })
     }
     
 }

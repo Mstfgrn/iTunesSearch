@@ -11,6 +11,8 @@ import UIKit
 
 extension UIView {
     
+    //The extension in this file returns constructure structures that will be useful for determining the Constraints.
+    
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         

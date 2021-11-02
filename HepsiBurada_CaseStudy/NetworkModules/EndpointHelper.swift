@@ -8,6 +8,7 @@
 import Foundation
 
 enum EndpointHelper {
+    // The structure contained in this allows me to obtain the Url needed to search for APIs.
     enum BaseUrls:String{
         case base = "https://itunes.apple.com/"
     }
