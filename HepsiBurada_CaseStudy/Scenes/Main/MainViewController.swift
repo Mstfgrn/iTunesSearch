@@ -30,7 +30,8 @@ class MainViewController: BaseViewController<MainViewModel> {
     override func prepareViewControllerConfigurations() {
         super.prepareViewControllerConfigurations()
         view.backgroundColor = .green
-        self.title = "HepsiBurada"
+        self.title = "iTunes Search"
+        navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.hidesBarsOnSwipe = true;
         navigationItem.searchController = searchController
         //viewModel.fetchCars(term: "micheal jackson", entity: "movie", completion:   resultHandler)
