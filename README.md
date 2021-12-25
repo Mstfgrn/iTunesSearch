@@ -1,5 +1,5 @@
 
-# HepsiBurada_CaseStudy
+# iTunes Search Application
 
 This application brings different types of content structures on iTunes using `iTunes Search API`. A modular structure was created by embedding each component into each other. An attempt has been made to stick to the `MVVM-C Design pattern`. It uses `DefaultNetworkPackage` as a package for **Network Operations**.
 
