@@ -8,11 +8,11 @@ This application brings different types of content structures on iTunes using `i
 --- 
 - In order for the user to search, more than 2 characters must be entered in the search text field.
   
-   - ![alt-text](searchCount.gif) 
+     ![alt-text](searchCount.gif) 
 --- 
 - Changing the content segment without filling in the search text field does not yield any results.
   
-    - ![alt-text](searchNeeds.gif) 
+     ![alt-text](searchNeeds.gif) 
 --- 
 - The hidesBarsOnSwipe feature is used in the navigationView structure. If the back title does not appear on the detail screen, it is sufficient to scroll down.
 
