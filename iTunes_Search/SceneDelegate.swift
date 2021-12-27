@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  HepsiBurada_CaseStudy
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 26.10.2021.
 //

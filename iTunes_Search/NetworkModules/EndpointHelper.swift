@@ -1,6 +1,6 @@
 //
 //  EndpointHelper.swift
-//  WeatherApplication
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 27.10.2021.
 //

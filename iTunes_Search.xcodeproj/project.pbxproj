@@ -21,9 +21,9 @@
 		2BCDFB52272784AB009F5709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB51272784AB009F5709 /* ViewController.swift */; };
 		2BCDFB57272784AF009F5709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BCDFB56272784AF009F5709 /* Assets.xcassets */; };
 		2BCDFB5A272784AF009F5709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCDFB58272784AF009F5709 /* LaunchScreen.storyboard */; };
-		2BCDFB65272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB64272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift */; };
-		2BCDFB6F272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB6E272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift */; };
-		2BCDFB71272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB70272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift */; };
+		2BCDFB65272784AF009F5709 /* iTunes_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB64272784AF009F5709 /* iTunes_SearchTests.swift */; };
+		2BCDFB6F272784AF009F5709 /* iTunes_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB6E272784AF009F5709 /* iTunes_SearchUITests.swift */; };
+		2BCDFB71272784AF009F5709 /* iTunes_SearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB70272784AF009F5709 /* iTunes_SearchUITestsLaunchTests.swift */; };
 		2BCDFB8227279138009F5709 /* DefaultNetworkOperationPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCDFB8127279138009F5709 /* DefaultNetworkOperationPackage */; };
 		2BCDFB85272791F9009F5709 /* EndpointHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB84272791F9009F5709 /* EndpointHelper.swift */; };
 		2BCDFB8F2727923A009F5709 /* GenericRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDFB872727923A009F5709 /* GenericRowType.swift */; };
@@ -87,10 +87,10 @@
 		2BCDFB59272784AF009F5709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BCDFB5B272784AF009F5709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCDFB60272784AF009F5709 /* iTunes_SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunes_SearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BCDFB64272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyTests.swift; sourceTree = "<group>"; };
+		2BCDFB64272784AF009F5709 /* iTunes_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchTests.swift; sourceTree = "<group>"; };
 		2BCDFB6A272784AF009F5709 /* iTunes_SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunes_SearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BCDFB6E272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyUITests.swift; sourceTree = "<group>"; };
-		2BCDFB70272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2BCDFB6E272784AF009F5709 /* iTunes_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchUITests.swift; sourceTree = "<group>"; };
+		2BCDFB70272784AF009F5709 /* iTunes_SearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BCDFB84272791F9009F5709 /* EndpointHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointHelper.swift; sourceTree = "<group>"; };
 		2BCDFB872727923A009F5709 /* GenericRowType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRowType.swift; sourceTree = "<group>"; };
 		2BCDFB882727923A009F5709 /* GenericValueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericValueProtocol.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		2BCDFB63272784AF009F5709 /* iTunes_SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFB64272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift */,
+				2BCDFB64272784AF009F5709 /* iTunes_SearchTests.swift */,
 			);
 			path = iTunes_SearchTests;
 			sourceTree = "<group>";
@@ -204,8 +204,8 @@
 		2BCDFB6D272784AF009F5709 /* iTunes_SearchUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFB6E272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift */,
-				2BCDFB70272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift */,
+				2BCDFB6E272784AF009F5709 /* iTunes_SearchUITests.swift */,
+				2BCDFB70272784AF009F5709 /* iTunes_SearchUITestsLaunchTests.swift */,
 			);
 			path = iTunes_SearchUITests;
 			sourceTree = "<group>";
@@ -528,7 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BCDFB65272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift in Sources */,
+				2BCDFB65272784AF009F5709 /* iTunes_SearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,8 +536,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BCDFB6F272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift in Sources */,
-				2BCDFB71272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift in Sources */,
+				2BCDFB6F272784AF009F5709 /* iTunes_SearchUITests.swift in Sources */,
+				2BCDFB71272784AF009F5709 /* iTunes_SearchUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

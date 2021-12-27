@@ -1,13 +1,13 @@
 //
-//  HepsiBurada_CaseStudyUITests.swift
-//  HepsiBurada_CaseStudyUITests
+//  iTunes_SearchUITests.swift
+//  iTunes_SearchUITests
 //
 //  Created by MstfGrgn on 26.10.2021.
 //
 
 import XCTest
 
-class HepsiBurada_CaseStudyUITests: XCTestCase {
+class ITunes_SearchUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

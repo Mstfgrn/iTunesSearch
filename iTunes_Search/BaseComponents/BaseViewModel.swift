@@ -1,6 +1,6 @@
 //
 //  BaseViewModel.swift
-//  WeatherApplication
+//  iTunes_Search
 //
 //  Created by MstfGrgn
 //

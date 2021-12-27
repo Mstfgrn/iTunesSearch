@@ -1,6 +1,6 @@
 //
 //  ItemDetailViewRequest.swift
-//  HepsiBurada_CaseStudy
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 31.10.2021.
 //

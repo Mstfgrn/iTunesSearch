@@ -1,6 +1,6 @@
 //
 //  GenericBaseView.swift
-//  PermissionProject
+//  iTunes_Search
 //
 //  Created by MstfGrgn
 //

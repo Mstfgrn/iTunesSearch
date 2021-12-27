@@ -7,7 +7,7 @@
 
 import XCTest
 
-class HepsiBurada_CaseStudyUITestsLaunchTests: XCTestCase {
+class ITunes_SearchUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

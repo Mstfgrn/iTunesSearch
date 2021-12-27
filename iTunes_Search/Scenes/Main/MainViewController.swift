@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  HW3_Mustafa_Gorgun
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 26.10.2021.
 //

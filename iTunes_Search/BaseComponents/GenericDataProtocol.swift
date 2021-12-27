@@ -1,6 +1,6 @@
 //
 //  GenericDataProtocol.swift
-//  Week_3
+//  iTunes_Search
 //
 //  Created by MstfGrgn
 //

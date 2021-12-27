@@ -1,6 +1,6 @@
 //
 //  UIView + Extensions.swift
-//  HepsiBurada_CaseStudy
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 1.11.2021.
 //

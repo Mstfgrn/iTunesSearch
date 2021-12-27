@@ -1,6 +1,6 @@
 //
 //  ItemDetailView.swift
-//  WeatherApplication
+//  iTunes_Search
 //
 //  Created by MstfGrgn on 29.10.2021.
 //
