@@ -79,16 +79,16 @@
 		2B88F425272F1AF3003067C9 /* ItemDetailViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewData.swift; sourceTree = "<group>"; };
 		2B88F428272F1EF5003067C9 /* ItemDetailViewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewRequest.swift; sourceTree = "<group>"; };
 		2B88F42A272F87E0003067C9 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
-		2BCDFB4A272784AB009F5709 /* HepsiBurada_CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HepsiBurada_CaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCDFB4A272784AB009F5709 /* iTunes_Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunes_Search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCDFB4D272784AB009F5709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCDFB4F272784AB009F5709 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2BCDFB51272784AB009F5709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BCDFB56272784AF009F5709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = HepsiBurada_CaseStudy/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		2BCDFB59272784AF009F5709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BCDFB5B272784AF009F5709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BCDFB60272784AF009F5709 /* HepsiBurada_CaseStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HepsiBurada_CaseStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCDFB60272784AF009F5709 /* iTunes_SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunes_SearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCDFB64272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyTests.swift; sourceTree = "<group>"; };
-		2BCDFB6A272784AF009F5709 /* HepsiBurada_CaseStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HepsiBurada_CaseStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCDFB6A272784AF009F5709 /* iTunes_SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunes_SearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCDFB6E272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyUITests.swift; sourceTree = "<group>"; };
 		2BCDFB70272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HepsiBurada_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BCDFB84272791F9009F5709 /* EndpointHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointHelper.swift; sourceTree = "<group>"; };
@@ -156,9 +156,9 @@
 		2BCDFB41272784AB009F5709 = {
 			isa = PBXGroup;
 			children = (
-				2BCDFB4C272784AB009F5709 /* HepsiBurada_CaseStudy */,
-				2BCDFB63272784AF009F5709 /* HepsiBurada_CaseStudyTests */,
-				2BCDFB6D272784AF009F5709 /* HepsiBurada_CaseStudyUITests */,
+				2BCDFB4C272784AB009F5709 /* iTunes_Search */,
+				2BCDFB63272784AF009F5709 /* iTunes_SearchTests */,
+				2BCDFB6D272784AF009F5709 /* iTunes_SearchUITests */,
 				2BCDFB4B272784AB009F5709 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,14 +166,14 @@
 		2BCDFB4B272784AB009F5709 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDFB4A272784AB009F5709 /* HepsiBurada_CaseStudy.app */,
-				2BCDFB60272784AF009F5709 /* HepsiBurada_CaseStudyTests.xctest */,
-				2BCDFB6A272784AF009F5709 /* HepsiBurada_CaseStudyUITests.xctest */,
+				2BCDFB4A272784AB009F5709 /* iTunes_Search.app */,
+				2BCDFB60272784AF009F5709 /* iTunes_SearchTests.xctest */,
+				2BCDFB6A272784AF009F5709 /* iTunes_SearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2BCDFB4C272784AB009F5709 /* HepsiBurada_CaseStudy */ = {
+		2BCDFB4C272784AB009F5709 /* iTunes_Search */ = {
 			isa = PBXGroup;
 			children = (
 				2BCDFBF6272A463B009F5709 /* Service */,
@@ -190,24 +190,24 @@
 				2BCDFB58272784AF009F5709 /* LaunchScreen.storyboard */,
 				2BCDFB5B272784AF009F5709 /* Info.plist */,
 			);
-			path = HepsiBurada_CaseStudy;
+			path = iTunes_Search;
 			sourceTree = "<group>";
 		};
-		2BCDFB63272784AF009F5709 /* HepsiBurada_CaseStudyTests */ = {
+		2BCDFB63272784AF009F5709 /* iTunes_SearchTests */ = {
 			isa = PBXGroup;
 			children = (
 				2BCDFB64272784AF009F5709 /* HepsiBurada_CaseStudyTests.swift */,
 			);
-			path = HepsiBurada_CaseStudyTests;
+			path = iTunes_SearchTests;
 			sourceTree = "<group>";
 		};
-		2BCDFB6D272784AF009F5709 /* HepsiBurada_CaseStudyUITests */ = {
+		2BCDFB6D272784AF009F5709 /* iTunes_SearchUITests */ = {
 			isa = PBXGroup;
 			children = (
 				2BCDFB6E272784AF009F5709 /* HepsiBurada_CaseStudyUITests.swift */,
 				2BCDFB70272784AF009F5709 /* HepsiBurada_CaseStudyUITestsLaunchTests.swift */,
 			);
-			path = HepsiBurada_CaseStudyUITests;
+			path = iTunes_SearchUITests;
 			sourceTree = "<group>";
 		};
 		2BCDFB83272791F9009F5709 /* NetworkModules */ = {
@@ -351,9 +351,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BCDFB49272784AB009F5709 /* HepsiBurada_CaseStudy */ = {
+		2BCDFB49272784AB009F5709 /* iTunes_Search */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BCDFB74272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudy" */;
+			buildConfigurationList = 2BCDFB74272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_Search" */;
 			buildPhases = (
 				2BCDFB46272784AB009F5709 /* Sources */,
 				2BCDFB47272784AB009F5709 /* Frameworks */,
@@ -363,17 +363,17 @@
 			);
 			dependencies = (
 			);
-			name = HepsiBurada_CaseStudy;
+			name = iTunes_Search;
 			packageProductDependencies = (
 				2BCDFB8127279138009F5709 /* DefaultNetworkOperationPackage */,
 			);
 			productName = HepsiBurada_CaseStudy;
-			productReference = 2BCDFB4A272784AB009F5709 /* HepsiBurada_CaseStudy.app */;
+			productReference = 2BCDFB4A272784AB009F5709 /* iTunes_Search.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BCDFB5F272784AF009F5709 /* HepsiBurada_CaseStudyTests */ = {
+		2BCDFB5F272784AF009F5709 /* iTunes_SearchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BCDFB77272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudyTests" */;
+			buildConfigurationList = 2BCDFB77272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_SearchTests" */;
 			buildPhases = (
 				2BCDFB5C272784AF009F5709 /* Sources */,
 				2BCDFB5D272784AF009F5709 /* Frameworks */,
@@ -384,14 +384,14 @@
 			dependencies = (
 				2BCDFB62272784AF009F5709 /* PBXTargetDependency */,
 			);
-			name = HepsiBurada_CaseStudyTests;
+			name = iTunes_SearchTests;
 			productName = HepsiBurada_CaseStudyTests;
-			productReference = 2BCDFB60272784AF009F5709 /* HepsiBurada_CaseStudyTests.xctest */;
+			productReference = 2BCDFB60272784AF009F5709 /* iTunes_SearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BCDFB69272784AF009F5709 /* HepsiBurada_CaseStudyUITests */ = {
+		2BCDFB69272784AF009F5709 /* iTunes_SearchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BCDFB7A272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudyUITests" */;
+			buildConfigurationList = 2BCDFB7A272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_SearchUITests" */;
 			buildPhases = (
 				2BCDFB66272784AF009F5709 /* Sources */,
 				2BCDFB67272784AF009F5709 /* Frameworks */,
@@ -402,9 +402,9 @@
 			dependencies = (
 				2BCDFB6C272784AF009F5709 /* PBXTargetDependency */,
 			);
-			name = HepsiBurada_CaseStudyUITests;
+			name = iTunes_SearchUITests;
 			productName = HepsiBurada_CaseStudyUITests;
-			productReference = 2BCDFB6A272784AF009F5709 /* HepsiBurada_CaseStudyUITests.xctest */;
+			productReference = 2BCDFB6A272784AF009F5709 /* iTunes_SearchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -430,7 +430,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BCDFB45272784AB009F5709 /* Build configuration list for PBXProject "HepsiBurada_CaseStudy" */;
+			buildConfigurationList = 2BCDFB45272784AB009F5709 /* Build configuration list for PBXProject "iTunes_Search" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -446,9 +446,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BCDFB49272784AB009F5709 /* HepsiBurada_CaseStudy */,
-				2BCDFB5F272784AF009F5709 /* HepsiBurada_CaseStudyTests */,
-				2BCDFB69272784AF009F5709 /* HepsiBurada_CaseStudyUITests */,
+				2BCDFB49272784AB009F5709 /* iTunes_Search */,
+				2BCDFB5F272784AF009F5709 /* iTunes_SearchTests */,
+				2BCDFB69272784AF009F5709 /* iTunes_SearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -546,12 +546,12 @@
 /* Begin PBXTargetDependency section */
 		2BCDFB62272784AF009F5709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BCDFB49272784AB009F5709 /* HepsiBurada_CaseStudy */;
+			target = 2BCDFB49272784AB009F5709 /* iTunes_Search */;
 			targetProxy = 2BCDFB61272784AF009F5709 /* PBXContainerItemProxy */;
 		};
 		2BCDFB6C272784AF009F5709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BCDFB49272784AB009F5709 /* HepsiBurada_CaseStudy */;
+			target = 2BCDFB49272784AB009F5709 /* iTunes_Search */;
 			targetProxy = 2BCDFB6B272784AF009F5709 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -763,7 +763,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HepsiBurada_CaseStudy.app/HepsiBurada_CaseStudy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunes_Search.app/iTunes_Search";
 			};
 			name = Debug;
 		};
@@ -788,7 +788,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HepsiBurada_CaseStudy.app/HepsiBurada_CaseStudy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunes_Search.app/iTunes_Search";
 			};
 			name = Release;
 		};
@@ -841,7 +841,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BCDFB45272784AB009F5709 /* Build configuration list for PBXProject "HepsiBurada_CaseStudy" */ = {
+		2BCDFB45272784AB009F5709 /* Build configuration list for PBXProject "iTunes_Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCDFB72272784AF009F5709 /* Debug */,
@@ -850,7 +850,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BCDFB74272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudy" */ = {
+		2BCDFB74272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCDFB75272784AF009F5709 /* Debug */,
@@ -859,7 +859,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BCDFB77272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudyTests" */ = {
+		2BCDFB77272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_SearchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCDFB78272784AF009F5709 /* Debug */,
@@ -868,7 +868,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BCDFB7A272784AF009F5709 /* Build configuration list for PBXNativeTarget "HepsiBurada_CaseStudyUITests" */ = {
+		2BCDFB7A272784AF009F5709 /* Build configuration list for PBXNativeTarget "iTunes_SearchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCDFB7B272784AF009F5709 /* Debug */,

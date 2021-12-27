@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BCDFB49272784AB009F5709"
                BuildableName = "HepsiBurada_CaseStudy.app"
-               BlueprintName = "HepsiBurada_CaseStudy"
-               ReferencedContainer = "container:HepsiBurada_CaseStudy.xcodeproj">
+               BlueprintName = "iTunes_Search"
+               ReferencedContainer = "container:iTunes_Search.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BCDFB5F272784AF009F5709"
                BuildableName = "HepsiBurada_CaseStudyTests.xctest"
-               BlueprintName = "HepsiBurada_CaseStudyTests"
-               ReferencedContainer = "container:HepsiBurada_CaseStudy.xcodeproj">
+               BlueprintName = "iTunes_SearchTests"
+               ReferencedContainer = "container:iTunes_Search.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,8 +44,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BCDFB69272784AF009F5709"
                BuildableName = "HepsiBurada_CaseStudyUITests.xctest"
-               BlueprintName = "HepsiBurada_CaseStudyUITests"
-               ReferencedContainer = "container:HepsiBurada_CaseStudy.xcodeproj">
+               BlueprintName = "iTunes_SearchUITests"
+               ReferencedContainer = "container:iTunes_Search.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BCDFB49272784AB009F5709"
             BuildableName = "HepsiBurada_CaseStudy.app"
-            BlueprintName = "HepsiBurada_CaseStudy"
-            ReferencedContainer = "container:HepsiBurada_CaseStudy.xcodeproj">
+            BlueprintName = "iTunes_Search"
+            ReferencedContainer = "container:iTunes_Search.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,8 +83,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BCDFB49272784AB009F5709"
             BuildableName = "HepsiBurada_CaseStudy.app"
-            BlueprintName = "HepsiBurada_CaseStudy"
-            ReferencedContainer = "container:HepsiBurada_CaseStudy.xcodeproj">
+            BlueprintName = "iTunes_Search"
+            ReferencedContainer = "container:iTunes_Search.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
